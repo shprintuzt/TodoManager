@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">TodoManeger</string>
     <string name="add_todo">Add Todo</string>
-    <string name="hint_todo">Todo title...</string>
+    <string name="hint_title">Todo title...</string>
+    <string name="hint_detail">Todo detail...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Todo not saved because it is empty.</string>
 </resources>

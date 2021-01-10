@@ -43,12 +43,13 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == newTodoActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(NewTodoActivity.EXTRA_REPLY)?.let {
+            data?.getStringExtra(NewTodoActivity.EXTRA_REPLY_TITLE)?.let {
+                var detail = data?.getStringExtra(NewTodoActivity.EXTRA_REPLY_DETAIL) ?: ""
                 val todo = Todo(
 //                    id = 0,
                     title = it,
                     dueDate = "20210131",
-                    detail = "詳細！"
+                    detail = detail
                 )
                 todoViewModel.insert(todo)
             }

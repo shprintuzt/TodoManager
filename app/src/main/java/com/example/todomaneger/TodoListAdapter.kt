@@ -16,14 +16,16 @@ class TodoListAdapter : ListAdapter<Todo, TodoListAdapter.TodoViewHolder>(TodosC
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.title)
+        holder.bind(current)
     }
 
     class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val todoItemView: TextView = itemView.findViewById(R.id.todo_title)
+        private val dueDateView: TextView = itemView.findViewById(R.id.due_date)
 
-        fun bind(text: String?) {
-            todoItemView.text = text
+        fun bind(todo: Todo?) {
+            todoItemView.text = todo?.title
+            dueDateView.text = todo?.dueDate
         }
 
         companion object {
